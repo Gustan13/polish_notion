@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define STR_SIZE 100
+
 //  48 ateh 57
+//  strtod 
 
 struct nodo {
     char operacao;
     float valor;
     struct nodo* fe;
     struct nodo* fd;
-}
+};
 
-struct nodo* criaNodo(operacao, valor) {
+struct nodo* criaNodo(char operacao, int valor) {
     struct nodo* nodo = malloc(sizeof(struct nodo));
 
     nodo->operacao = 32;
@@ -42,11 +45,10 @@ int addNode(struct nodo* head, struct nodo* newNode) {
 }
 
 int main() {
-    struct nodo* head = criaNodo('*', 0);
+    char *str = malloc(sizeof(char) * 100);
+    fgets(str, 100, stdin);
     
-    addNode(head);
-
-    puts(head->operacao);
+    puts(str);
 
     return 0;
 }
